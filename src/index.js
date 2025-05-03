@@ -8,6 +8,7 @@ import indexedDbCache from './utils/indexedDbCache';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './index.css';
+import { ThemeProvider } from '@mui/material/styles';
 
 import './services/axiosConfig';
 
@@ -121,7 +122,9 @@ setupCaching().then(() => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App />
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
       </BrowserRouter>
     </React.StrictMode>
   );
